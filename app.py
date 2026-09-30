@@ -7,12 +7,13 @@ import pandas as pd
 
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="1234",
-        database="FITNESS_LOGGER"
+        host=st.secrets["mysql"]["host"],
+        port=st.secrets["mysql"]["port"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        ssl_disabled=False
     )
-
 
 # ---------------- PAGE CONFIGURATION ---------------- #
 
